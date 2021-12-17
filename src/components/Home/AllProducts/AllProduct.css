@@ -1,0 +1,32 @@
+.bannerDesign {
+    position: relative;
+    /* background-image: url("https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80") !important; */
+}
+
+.childDesign {
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.animate {
+    animation: myAnim 1s ease 0s infinite normal forwards;
+    -webkit-animation: myAnim 1s ease 0s infinite normal forwards;
+}
+
+@keyframes myAnim {
+    0%,
+    50%,
+    100% {
+        color: red;
+    }
+    25%,
+    75% {
+        color: green;
+    }
+}
