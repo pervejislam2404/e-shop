@@ -32,12 +32,11 @@ const Login = () => {
              <img className="img-fluid" alt="" src={profile}/>
              <h1 className="fw-bold text-danger text-uppercase">Make you identity</h1>
           </div>
-
+       
+          {/* user-login-form */}
           <div className="col-12 col-md-6 col-lg-6 p-5 bg-white">
                 <form className="d-flex flex-column gap-3 p-lg-5" onSubmit={handleSubmit(onSubmit)}>
-                    {/* <input
-                    className="bg-light p-3 w-100 fs-5 border-0 my-3"
-                     {...register("name",{required: true})} placeholder="Name"/> */}
+                   
                     <input 
                     className="bg-light p-3 w-100 fs-5 border-0 my-3"
                     {...register("email",{required: true})} placeholder="Email"/>

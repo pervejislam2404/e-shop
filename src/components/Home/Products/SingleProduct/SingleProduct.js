@@ -12,13 +12,13 @@ const SingleProduct = ({ product }) => {
     }
 
   return (
+    // every-single-product-detail
     <div className="col-12 col-md-6 col-lg-4">
       <Card className="bg-light border-0">
         <div className="text-center p-3">
           <Card.Img className="" height="230" variant="top" src={img} />
         </div>
-        <Card.Body>
-         
+        <Card.Body>         
                 <Card.Title className="fw-bold text-danger">{name}</Card.Title>
 
                 {stock <='0' ?<Card.Title className="fw-light text-info">Out of stock</Card.Title>:
@@ -27,9 +27,7 @@ const SingleProduct = ({ product }) => {
               <div className="d-flex py-2">
                 <strike style={{color:'gray'}} className="d-inline-block pe-4 fw-bold">{ Math.floor(Math.random()*10) + Number(price)}$</strike>
                 <Card.Text className="fw-bold">{price}$</Card.Text>
-              </div>
-        
-            
+              </div>            
           <div className=" pb-3">
           <Rating
             initialRating={rate}

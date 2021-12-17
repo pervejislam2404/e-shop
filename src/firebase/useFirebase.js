@@ -25,9 +25,7 @@ firebaseInitialize();
             console.log('came sign with email pass');
               const newUser = { email, displayName: name };
               dispatch(googleSignIn(newUser))
-              // save user to the database
               saveUser(email, name, 'POST');
-              // send name to firebase after creation
               updateProfile(auth.currentUser, {
                   displayName: name
               }).then(() => {
@@ -120,13 +118,12 @@ useEffect(() => {
 useEffect(() => {
   axios(`https://guarded-ocean-40685.herokuapp.com/checkAdmin/${user?.email}`)
   .then(res=>{
-    // console.log(res.data);
   dispatch(setAdmin(res.data))
   })
 },[user])
 
 
-
+// saving-user-to-database
 const saveUser = (email, displayName, method) => {
   const user = { email, displayName };
   fetch('https://guarded-ocean-40685.herokuapp.com/setUser', {

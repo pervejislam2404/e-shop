@@ -72,10 +72,10 @@ const ManageProducts = () => {
             {allProductsToManage.map((product,index) => {
               return (
                 <tr key={index} className="text-center">
-                  <td>{index + 1}</td>
-                  <td>{product?.name}</td>
-                  <td>{product?.price}</td>
-                  <td className="fw-bold">{product?.stock}</td>
+                  <td className="fw-bold text-secondary">{index + 1}</td>
+                  <td className="fw-bold text-secondary">{product?.name}</td>
+                  <td className="fw-bold text-secondary">{product?.price}</td>
+                  <td  className="fw-bold text-secondary">{product?.stock}</td>
                   <td><Button onClick={()=>handleDelete(product._id)} variant="danger"><i className="fas fa-trash-alt pe-2"></i>Delete</Button></td>
                 </tr>
               );

@@ -9,6 +9,7 @@ const Cloths = () => {
     const dispatch = useDispatch()
     const Container = useSelector((state)=> state.stateContainer.Container)
     
+    // getting-all-cloths-product
     useEffect(() => {
         axios(`https://guarded-ocean-40685.herokuapp.com/products/cloths`)
         .then((response) => {

@@ -37,6 +37,7 @@ const AddProduct = () => {
       });
   };
 
+
   return (
     <div>
       <div className="container p-4 rounded">
@@ -102,8 +103,8 @@ const AddProduct = () => {
                         <option value="cloths">Cloths</option>
                         <option value="beauty">Beauty products</option>
                     </select>
-           </div>
-
+            </div>
+ 
                   <input
                     style={{ background: "rgb(238 238 238)" }}
                     className=" w-100 p-3 fs-5 border-0 my-3 rounded"

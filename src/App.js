@@ -48,6 +48,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/allProducts" element={<AllProducts/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/*" element={<NotFound/>}/>
 
 
           <Route path="/dashboard" element={<Dashboard/>}>
@@ -64,7 +65,7 @@ function App() {
           <Route path="/detail/:id" element={<PrivateRoute>
             <DetailRoute/>                 
           </PrivateRoute>}/>
-
+           
         </Routes>
         <Footer/>
       </Router>

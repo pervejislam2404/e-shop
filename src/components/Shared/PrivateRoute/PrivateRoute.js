@@ -6,7 +6,7 @@ import loader from '../../../loader.gif';
 const PrivateRoute = ({children,...rest}) => {
     const user = useSelector((state)=> state.stateContainer.user);
     const isLoading = useSelector((state)=> state.stateContainer.isLoading);
-    const location = useLocation()  
+    const location = useLocation();  
     console.log(user);
 
     if(isLoading){

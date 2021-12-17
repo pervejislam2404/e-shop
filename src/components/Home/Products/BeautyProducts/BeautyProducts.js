@@ -9,6 +9,8 @@ const BeautyProducts = () => {
     const dispatch = useDispatch()
     const Container = useSelector((state)=> state.stateContainer.Container)
     
+    // getting-all-beauty-product-from-database
+    
     useEffect(() => {
         axios(`https://guarded-ocean-40685.herokuapp.com/products/beautyProduct`)
         .then((response) => {
@@ -16,6 +18,7 @@ const BeautyProducts = () => {
             dispatch(setContainer(response.data));
         })
     },[])
+
     return (
         <div>
             <div className="d-flex justify-content-center">

@@ -22,6 +22,8 @@ const Review = () => {
         formData.append('description', data?.description);
         
 
+        // saving-review-information-to-database
+        
         axios.post('https://guarded-ocean-40685.herokuapp.com/saveReview',formData,{
           headers: {
             'authorization': `Bearer ${token}`,

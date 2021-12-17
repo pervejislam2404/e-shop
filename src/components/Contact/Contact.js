@@ -52,6 +52,7 @@ const Contact = () => {
             </div>
 
 
+           {/* frequently-asked-questions  */}
 
             <div className="container py-5">
                 <div className="row"> 
@@ -61,18 +62,14 @@ const Contact = () => {
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>How i can control my order?</Accordion.Header>
                                 <Accordion.Body>
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
+                               You can control your product from dashboard in my orders link.
                                 </Accordion.Body>
                             </Accordion.Item>
 
                             <Accordion.Item eventKey="1">
                                 <Accordion.Header>Why is my registration delayed?</Accordion.Header>
                                 <Accordion.Body>
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
+                                 we are sorry, There can be some technical issue.
                                 </Accordion.Body>
                             </Accordion.Item>
 
@@ -80,9 +77,7 @@ const Contact = () => {
                             <Accordion.Item eventKey="2">
                                 <Accordion.Header>What do i need to buy products?</Accordion.Header>
                                 <Accordion.Body>
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
+                               To buy a product you must have to sign in and you have to pay.
                                 </Accordion.Body>
                             </Accordion.Item>
 
@@ -90,9 +85,7 @@ const Contact = () => {
                             <Accordion.Item eventKey="3">
                                 <Accordion.Header>How i can track my order?</Accordion.Header>
                                 <Accordion.Body>
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
+                               we can track you product through contact with us.
                                 </Accordion.Body>
                             </Accordion.Item>
 
@@ -100,14 +93,13 @@ const Contact = () => {
                             <Accordion.Item eventKey="4">
                                 <Accordion.Header>How i can get back my money?</Accordion.Header>
                                 <Accordion.Body>
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                est laborum.
+                               First of all contact with us about to kow return policy
                                 </Accordion.Body>
                             </Accordion.Item>
                     </Accordion>
                     </div>
 
+                 {/* contact-form */}
 
                     <div className="col-12 col-md-6 col-ld-6">
                 <h2 className="text-center fw-bold py-4">CONTACT FORM</h2>
@@ -132,13 +124,11 @@ const Contact = () => {
                                 style={{border: '2px solid lightgray'}}
                                 className="w-100 p-3 fs-5 mb-3"
                                 rows="3"
-                                type="email"
-                                {...register("email", { required: true })}
-                                placeholder="Email"
+                                {...register("comment", { required: true })}
+                                placeholder="Comment"
                             ></textarea>
 
                            
-                            {/* <input type="number" {...register("age", { min: 18, max: 99 })} /> */}
                             <Button variant="dark" className="p-2 w-100 text-white px-5 mx-auto fs-5 border-0" type="submit">Register</Button>
                             
                         </form>

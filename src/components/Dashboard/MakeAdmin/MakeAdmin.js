@@ -38,7 +38,7 @@ const MakeAdmin = () => {
     <div>
       <div className="d-flex flex-column justify-content-center align-items-center p-5">
 
-        {/* adding-admin-with-email-address */}
+        {/* adding-admin-with-email */}
 
         <form className="gap-2" onSubmit={handleSubmit(onSubmit)}>
           <input

@@ -18,8 +18,8 @@ const Banner = () => {
                   <div className="col-12 col-md-6 col-6 d-flex align-items-center justify-content-center">
                           <div className="d-flex justify-content-center align-items-center flex-direction-column h-100 ps-5">
                                 <div className="px-5">
-                                      <h2>New arrival</h2>
                                       <h1>MES'S SPORT SHOES</h1>
+                                      <h2>New arrival</h2>
                                       <h5>20% discount</h5>
                                 </div>
                           </div>
@@ -43,8 +43,8 @@ const Banner = () => {
                   <div className="col-12 col-md-6 col-6">
                          <div className="d-flex justify-content-center align-items-center flex-direction-column h-100 ps-5">
                                 <div className="px-5 ps-5">
-                                      <h2>New trending</h2>
                                       <h1>SMART CHAIR,BUY FOUR GET ESPECIAL BONUS</h1>
+                                      <h2>New trending</h2>
                                       <h5>30% discount</h5>
                                 </div>
                           </div>
@@ -67,9 +67,9 @@ const Banner = () => {
                   <div className="col-12 col-md-6 col-6">
                           <div className="d-flex justify-content-center align-items-center flex-direction-column h-100 ps-5">
                                 <div className="px-5">
-                                      <h2>New arrival</h2>
-                                      <h1>MES'S SPORT SHOES</h1>
-                                      <h5>20% discount</h5>
+                                      <h1>MES'S T-Shirt</h1>
+                                      <h2>New Fashion</h2>
+                                      <h5>10% discount</h5>
                                 </div>
                           </div>
                   </div>
@@ -92,8 +92,8 @@ const Banner = () => {
                   <div className="col-12 col-md-6 col-6">
                           <div className="d-flex justify-content-center align-items-center flex-direction-column h-100 ps-5">
                                 <div className="px-5">
-                                      <h2>New arrival</h2>
-                                      <h1>MES'S SPORT SHOES</h1>
+                                      <h1>SHINE YOUR SKIN</h1>
+                                      <h2>Women's beauty products</h2>
                                       <h5>20% discount</h5>
                                 </div>
                           </div>

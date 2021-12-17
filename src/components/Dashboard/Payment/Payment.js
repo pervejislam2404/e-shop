@@ -17,6 +17,8 @@ const Payment = () => {
     const singleProductToPay = useSelector((state)=> state.stateContainer.singleProductToPay);
     const dispatch = useDispatch()
 
+    // getting-specific-product-to-pay
+    
     useEffect(() => {
         axios(`https://guarded-ocean-40685.herokuapp.com/paymentProduct/${id}`)
             .then(data => {

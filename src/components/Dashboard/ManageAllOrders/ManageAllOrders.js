@@ -101,7 +101,7 @@ const handleStatus = id => {
 
         {/* handle-all-ordered-products */}
                  
-        <Table striped bordered hover>
+        <Table bordered hover>
          {allOrders?.length && <thead>
             <tr className="text-center">
               <th>Index</th>
@@ -111,7 +111,6 @@ const handleStatus = id => {
               <th>User Phone</th>
               <th>User Address</th>
               <th>Price</th>
-              {/* <th>Payment</th> */}
               <th>Action</th>
               <th>Manage Status</th>
             </tr>
@@ -123,23 +122,19 @@ const handleStatus = id => {
             {allOrders?.map((product,index) => {
               return (
                 <tr key={index} className="text-center">
-                  <td>{index + 1}</td>
+                  <td className="fw-bold text-secondary">{index + 1}</td>
                   <td><img src={product?.img} height="50" width="60" alt="img" /></td>
-                  <td>{product?.name}</td>
-                  <td>{product?.email}</td>
-                  <td>{product?.number}</td>
-                  <td>{product?.address}</td>
-                  <td>{product?.price}</td>
-                  {/* <td>{product?.payment ? 'paid': 
-                     <Link to={`/dashboard/payment/${product?._id}`} className="text-white text-decoration-none bg-info px-4 py-2">Pay</Link>}
-                  </td> */}
+                  <td className="fw-bold text-secondary">{product?.name}</td>
+                  <td className="fw-bold text-secondary">{product?.email}</td>
+                  <td className="fw-bold text-secondary">{product?.number}</td>
+                  <td className="fw-bold text-secondary">{product?.address}</td>
+                  <td className="fw-bold text-secondary">{product?.price}</td>
                   <td>
                     <Button 
                       onClick={()=>handleDelete(product._id)} 
                       variant="danger"
                       >
                         <i className="fas fa-trash-alt pe-2"></i>
-                        {/* Delete */}
                     </Button>
                   </td>
 

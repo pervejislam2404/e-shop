@@ -80,11 +80,12 @@ console.log(token);
       <div className="container border bg-white p-5">
         <div className="row">
 
-
-          <div className="col-12 col-lg-6 p-2 bg-info">
+               {/* product-detail */}
+               
+          <div className="col-12 col-lg-6 p-2 bg-light">
             <Card className="bg-light border-0">
               <div className="text-center p-5">
-                <Card.Img className="img-fluid"  variant="top" src={img} />
+                <Card.Img className="img-fluid mh-50"  variant="top" src={img} />
               </div>
 
               <Card.Body>
@@ -93,6 +94,9 @@ console.log(token);
                   <Card.Text className="fw-bold">{price}$</Card.Text>
                 </div>
                 <Card.Text className="fw-bold">{description}$</Card.Text>
+
+                {stock <='0' ?<Card.Title className="fw-light text-info">Out of stock</Card.Title>:
+                <Card.Title className="fw-light text-secondary">In stock {stock}</Card.Title>}
 
                 <div className=" pb-3">
                   <Rating

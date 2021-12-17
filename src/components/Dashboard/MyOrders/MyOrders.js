@@ -85,12 +85,6 @@ const MyOrders = () => {
   return (
     <div>
       <div className="container py-3 overflow-scroll">
-        {/* spinner */}
-        {/* {!singleUserProducts.length && (
-          <div className="text-center p-5">
-            <img src={loader} alt="" />
-          </div>
-        )} */}
 
         {!singleUserProducts?.length && (
           <div className="d-flex justify-content-center align-items-center p-5">
@@ -100,19 +94,18 @@ const MyOrders = () => {
 
         {/* handle-all-ordered-products */}
 
-        <Table striped bordered hover>
+        <Table >
           {singleUserProducts?.length && (
             <thead>
               <tr className="text-center">
                 <th>Index</th>
                 <th>Photo</th>
                 <th>Product Name</th>
-                <th>User Phone</th>                
                 <th>Status</th>                
+                <th>Address</th>                
                 <th>Price</th>
                 <th>Payment</th>
                 <th>Action</th>
-                {/* <th>Manage Status</th> */}
               </tr>
             </thead>
           )}
@@ -123,18 +116,27 @@ const MyOrders = () => {
               return (
                 <tr key={index} className="text-center">
                   <td>{index + 1}</td>
+
                   <td>
                     <img src={product?.img} height="50" width="60" alt="img" />
                   </td>
-                  <td>{product?.name}</td>
-                  <td>{product?.number}</td>
-                  <td className="pt-2"><span className="bg-info text-white px-4 py-2 rounded ">{product?.status}</span></td>
-                  <td>{product?.address}</td>
-                  <td>{product?.price}</td>
-                  <td>{product?.payment ? 'paid': 
-                     <Link to={`/dashboard/payment/${product?._id}`} className="text-white text-decoration-none bg-info px-4 py-2">Pay</Link>}
+
+                  <td className="fw-bold text-secondary">{product?.name}</td>
+
+                  <td className="text-dark pt-4">
+                    <span className="bg-info px-4 py-2 text-black rounded fw-bold">{product?.status}</span>
                   </td>
-                  <td>
+
+                  <td className="fw-bold text-secondary">{product?.address}</td>
+
+                  <td className="fw-bold text-secondary">{product?.price}</td>
+
+                  <td className="text-dark fw-bold text-dark pt-4 ">
+                    {product?.payment ? <p className="">paid</p>: 
+                     <Link to={`/dashboard/payment/${product?._id}`} className="text-dark text-decoration-none bg-info px-4 rounded py-2">Pay</Link>}
+                  </td>
+
+                  <td className="pt-3">
                     <Button
                       onClick={() => handleDelete(product._id)}
                       variant="danger"
@@ -144,16 +146,6 @@ const MyOrders = () => {
                     </Button>
                   </td>
 
-                  {/* <td>
-                    <Button
-                      onClick={() => handleStatus(product._id)}
-                      variant={
-                        product?.status === "shipped" ? "info" : "warning"
-                      }
-                    >
-                      {product?.status}
-                    </Button>
-                  </td> */}
                 </tr>
               );
             })}

@@ -9,6 +9,8 @@ const Furniture = () => {
     const dispatch = useDispatch()
     const Container = useSelector((state)=> state.stateContainer.Container)
     
+
+    // getting-all-furniture
     useEffect(() => {
         axios(`https://guarded-ocean-40685.herokuapp.com/products/furniture`)
         .then((response) => {

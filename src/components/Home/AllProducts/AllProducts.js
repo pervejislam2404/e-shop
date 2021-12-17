@@ -11,7 +11,6 @@ import Rating from "react-rating";
 import { useNavigate } from "react-router-dom";
 import loader from './loader.gif';
 import banner from './banner.jpg';
-import discount from './discount.png'
 import './AllProduct.css';
 
 
@@ -34,7 +33,6 @@ const AllProducts = () => {
         const count = res.data?.count;
         const pageNumber = Math.ceil(count / size);
         dispatch(setPageCount(pageNumber));
-        //   dispatch(setCount(res.data?.count));
       }
     );
   }, [page]);
@@ -55,15 +53,7 @@ const AllProducts = () => {
       <div className="container-fluid bannerDesign">
             <img className="img-fluid w-100 h-100" src={banner} alt="" />
             <div class="childDesign">
-              {/* <div className="row"> */}
-                 {/* <div className="col-12 col-md-6 col-lg-6"> */}
-                     {/* <h1 className="text-danger fw-bold">Exclusive Summer Sale Is Going On Zairito The Shopify</h1> */}
-                     <h1 className="fw-bold fs-2 mt-4">GET <span className="animate">50% DISCOUNT</span> ON PRODUCT</h1>
-                 {/* </div> */}
-                 {/* <div className="col-12 col-md-6 col-lg-6">
-                      <img className="img-fluid" src={discount} alt="" />
-                 </div> */}
-              {/* </div> */}
+                 <h1 className="fw-bold fs-2 mt-4">GET <span className="animate">50% DISCOUNT</span> ON PRODUCT</h1>
             </div>
       </div>
 

@@ -25,7 +25,7 @@ const Header = () => {
       <Navbar expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">
-              <img className="" width="50" height="50" src="" alt="" />
+              <h3 className="fw-bold text-danger">E-SHOP</h3>
           </Navbar.Brand>
           
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -60,10 +60,9 @@ const Header = () => {
               {user?.email && <Button className="px-2" onClick={handleLogOut} variant="danger"><i className="fas fa-sign-out-alt px-2 fs-6"></i> logOut</Button>}
 
               <button type="button" class="btn  position-relative mx-4">
-               <i class="fas fa-cart-plus fs-2 text-primary"></i>
+               <i class="fas fa-cart-plus fs-3 text-primary"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   {singleUserProducts?.length}
-                  {/* <span class="visually-hidden">unread messages</span> */}
                 </span>
               </button>
              
