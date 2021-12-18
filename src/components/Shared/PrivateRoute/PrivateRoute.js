@@ -6,8 +6,7 @@ import loader from '../../../loader.gif';
 const PrivateRoute = ({children,...rest}) => {
     const user = useSelector((state)=> state.stateContainer.user);
     const isLoading = useSelector((state)=> state.stateContainer.isLoading);
-    const location = useLocation();  
-    console.log(user);
+    const location = useLocation(); 
 
     if(isLoading){
         return <div className="d-flex justify-content-center">
@@ -17,7 +16,6 @@ const PrivateRoute = ({children,...rest}) => {
     if (!user?.email) {
         return <Navigate to="/login" state={{ from: location }} />;
       }
-    console.log('came private route')
       return children;
 };
 

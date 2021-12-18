@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import profile from './myP.png'
 import { Button } from 'react-bootstrap';
 import useFirebase from '../../../firebase/useFirebase';
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const {googleSign, signWithEmailPass} = useFirebase(); 
@@ -11,6 +12,8 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  const error = useSelector((state)=> state.stateContainer.errorMsg)
 
 
   const onSubmit = (data) => {
@@ -54,7 +57,7 @@ const Login = () => {
                 </div>
 
                 <div className="text-center p-3">
-                  <h5 className="text-danger">{}</h5>
+                  <h5 className="text-danger">{error}</h5>
                   <Link className="text-decoration-none fw-bold fs-5 text-danger" to="/register">Don't you have account?<span className="text-primary">Register</span></Link>
               </div>
           </div>

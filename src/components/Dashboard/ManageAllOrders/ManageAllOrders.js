@@ -24,7 +24,6 @@ const ManageAllOrders = () => {
     }
     )
     .then((res) => {
-        console.log(res.data);
       dispatch(setAllOrders(res?.data));
     })
   },[pageRender,token]);

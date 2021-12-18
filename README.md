@@ -14,6 +14,7 @@ This project [E-SHOP](https://e-shop-47555.web.app/).
 - User will get especial discount.
 - You will get 24 hours support session. 
 - Fully responsive website.
+- To get admin role use email admin@admin.com and pass 123456
 
 
 ## This is a cloths, beauty, furniture, shoes products related website,you will can find different kind product here,Get the attractive discount.

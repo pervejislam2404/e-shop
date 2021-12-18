@@ -14,7 +14,6 @@ const AddProduct = () => {
   // adding-new-product-to-database 
 
   const onSubmit = (data) => {
-      console.log(data);
     axios.post(`https://guarded-ocean-40685.herokuapp.com/addProduct`, data,{
       headers:{
         'authorization':`Bearer ${token}`,

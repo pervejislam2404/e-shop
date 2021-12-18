@@ -69,7 +69,6 @@ const MyOrders = () => {
 
     // updating-stock
     const stock = {stock:Number(findData?.stock),description:findData?.description}
-    console.log(stock);
 
       axios.put(`https://guarded-ocean-40685.herokuapp.com/updateStockWithDes`,{stock},{
           headers:{
@@ -78,7 +77,6 @@ const MyOrders = () => {
           }
       })
       .then(res=>{
-          console.log(res.data);
         })    
   };
 

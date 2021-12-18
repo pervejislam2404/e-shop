@@ -32,7 +32,7 @@ const RattingSection = () => {
           {/* showing-all-user-review */}
           {review?.map((review, index) => {
             return (
-              <div key={index} className="col-lg-3 col-12">
+              <div key={index} className="col-md-6 lg-3 col-12">
                 <Card className="border-0 rounded">
 
                   <Card.Body className="p-3 cart">

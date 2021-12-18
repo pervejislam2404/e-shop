@@ -14,7 +14,6 @@ const Furniture = () => {
     useEffect(() => {
         axios(`https://guarded-ocean-40685.herokuapp.com/products/furniture`)
         .then((response) => {
-            console.log(response.data);
             dispatch(setContainer(response.data));
         })
     },[])

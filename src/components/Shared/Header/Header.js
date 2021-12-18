@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import useFirebase from '../../../firebase/useFirebase';
 
@@ -8,6 +9,7 @@ import useFirebase from '../../../firebase/useFirebase';
 const Header = () => {
     const user = useSelector((state)=> state.stateContainer.user);
     const {googleSingOut} = useFirebase();
+    const navigate = useNavigate();
 
     const singleUserProducts = useSelector(
       (state) => state.stateContainer.singleUserProducts
@@ -17,6 +19,7 @@ const Header = () => {
 
     const handleLogOut = ()=>{
         googleSingOut();
+        navigate("/")
     }
 
   return (

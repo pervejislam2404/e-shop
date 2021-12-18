@@ -6,7 +6,6 @@ import { Spinner, Button } from 'react-bootstrap';
 import { setPayClientSecret, setPayError, setPayProcessing, setPaySuccess } from '../../../Redux/slice/statesSlice';
 
 const CheckoutForm = ({ singleProductToPay }) => {
-    console.log(singleProductToPay)
     const { price, _id } = singleProductToPay;
     const stripe = useStripe();
     const elements = useElements();
@@ -75,7 +74,6 @@ const CheckoutForm = ({ singleProductToPay }) => {
         else {
             dispatch(setPayError(''));
             dispatch(setPaySuccess('Your payment processed successfully.'))
-            console.log(paymentIntent);
             dispatch(setPayProcessing(false));
             // save to database
             const payment = {

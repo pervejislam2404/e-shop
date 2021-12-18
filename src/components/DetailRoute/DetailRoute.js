@@ -15,7 +15,7 @@ const DetailRoute = () => {
   const token = useSelector((state) => state.stateContainer.token);
   const user = useSelector((state) => state.stateContainer.user);
 
-console.log(token);
+
 
 
   const { register, handleSubmit, reset } = useForm();
@@ -35,7 +35,6 @@ console.log(token);
 
       axios.post(`https://guarded-ocean-40685.herokuapp.com/myProduct`,myProduct)
       .then(res=>{
-          console.log(res.data)
           if(res?.data?.acknowledged){
             swal("Product added successful!", "successful", "success");
           }else{
@@ -54,7 +53,6 @@ console.log(token);
           }
       })
       .then(res=>{
-          console.log(res.data)
           if(res?.data?.acknowledged){
             swal("Product added successful!", "successful", "success");
           }else{

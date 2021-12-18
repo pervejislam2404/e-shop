@@ -14,7 +14,6 @@ const BeautyProducts = () => {
     useEffect(() => {
         axios(`https://guarded-ocean-40685.herokuapp.com/products/beautyProduct`)
         .then((response) => {
-            console.log(response.data);
             dispatch(setContainer(response.data));
         })
     },[])

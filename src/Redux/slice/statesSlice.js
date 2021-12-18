@@ -6,30 +6,51 @@ import { createSlice } from '@reduxjs/toolkit'
 const bookSlice = createSlice({
     name: 'stateContainer',
     initialState: {
-        readingList: [],
-        finishedList: [],
+      //  state-for-user-information
         user: null,
+      //   loader-for-monitor-user-info 
         isLoading: true,
+      //   state-for-login-registration-error
         errorMsg: '',
+      //   checking-admin
         admin: false,
+      //   product-container
         Container:[],
+      //   for-single-product
         singleProduct:{},
+      //   state-for-all-product
         allProducts: [],
+      //   page-number
         page:0,
+      //   size-of-product-to-show
         size:10,
+      //   total-page-number
         pageCount:0,
+      //   jwt-token
         token:'',
+      //   all-review
         review: [],
+      //   all-ordered-products
         allOrders:[],
+      //   for-making-effect
         pageRender:0, 
+      //   user-added-product
         singleUserProducts:[],
+      //   all-products
         allProductsToManage: [],
+      //   single-product-for-paying
         singleProductToPay: {},
+      //   successfully-pay-msg
         paySuccess :'',
+      //   pay-error
         payError :'',
+      //   tracking-payment
         payProcessing:false,
+      //   secret-for-pay
         payClientSecret:'',
+      //   total-stock
         stock:0,
+      //   getting-id-to-update-stock
         idToStock: '',
 
     },

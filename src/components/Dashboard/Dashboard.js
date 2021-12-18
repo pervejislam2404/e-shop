@@ -1,7 +1,7 @@
 import React from "react";
 import useFirebase from '../../firebase/useFirebase';
 import { Button } from 'react-bootstrap';
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 
@@ -10,9 +10,13 @@ import { useSelector } from "react-redux";
 
 const Dashboard = () => {
 const admin = useSelector((state)=> state.stateContainer.admin);
-const {googleSingOut} = useFirebase()
+const {googleSingOut} = useFirebase();
+const navigate = useNavigate();
 
-
+const handleSingOut = () =>{
+  googleSingOut();
+  navigate("/")
+} 
 
 
   return (
@@ -50,7 +54,7 @@ const {googleSingOut} = useFirebase()
 
 
               <li className="list-group-item border-0 fs-5">  
-                  <Button onClick={googleSingOut} variant="danger"><i className="fas fa-sign-out-alt px-2 fs-5"></i> Logout</Button>
+                  <Button onClick={handleSingOut} variant="danger"><i className="fas fa-sign-out-alt px-2 fs-5"></i> Logout</Button>
               </li>
 
             </ul>

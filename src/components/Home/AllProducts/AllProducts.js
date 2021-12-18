@@ -29,7 +29,6 @@ const AllProducts = () => {
     axios(`https://guarded-ocean-40685.herokuapp.com/allProducts?page=${page}&&size=${size}`).then(
       (res) => {
         dispatch(setAllProduct(res.data?.products));
-        console.log(res.data.count);
         const count = res.data?.count;
         const pageNumber = Math.ceil(count / size);
         dispatch(setPageCount(pageNumber));
