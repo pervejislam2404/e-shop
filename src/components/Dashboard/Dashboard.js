@@ -15,7 +15,7 @@ const navigate = useNavigate();
 
 const handleSingOut = () =>{
   googleSingOut();
-  navigate("/")
+  navigate("/home")
 } 
 
 

@@ -19,7 +19,7 @@ const Header = () => {
 
     const handleLogOut = ()=>{
         googleSingOut();
-        navigate("/")
+        navigate("/home")
     }
 
   return (
