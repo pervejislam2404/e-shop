@@ -1,6 +1,6 @@
 # E-SHOP
 
-This project [E-SHOP](https://e-shop-47555.web.app/beauty).
+This project [E-SHOP](https://e-shop-47555.web.app/).
 
 ## Available Features
 
