@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Spinner, Table, Button } from 'react-bootstrap';
+import { useForm } from "react-hook-form";
+import { Spinner, Table, Button, Modal } from 'react-bootstrap';
 import  swal from 'sweetalert';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setAllProductsToManage } from '../../../Redux/slice/statesSlice';
+import { setAllProductsToManage, setIdToStock, setPageRender, setStock } from '../../../Redux/slice/statesSlice';
 
 const ManageProducts = () => {
-    const [allProducts,setAllProducts] = useState([]);
+    const [smShow, setSmShow] = useState(false);
+    // const [allProducts,setAllProducts] = useState([]);
     const token = useSelector((state)=> state.stateContainer.token);
     const allProductsToManage = useSelector((state)=> state.stateContainer.allProductsToManage);
+    const stock = useSelector((state)=> state.stateContainer.stock);
+    const idToStock = useSelector((state)=> state.stateContainer.idToStock);
+    const pageRender = useSelector((state)=> state.stateContainer.pageRender);
     const dispatch = useDispatch()
 
 
@@ -17,7 +22,8 @@ const ManageProducts = () => {
         axios("https://guarded-ocean-40685.herokuapp.com/getAllProducts").then((res) => {
             dispatch(setAllProductsToManage(res.data));
         });
-      }, []);
+      }, [pageRender]);
+
 
 
       const handleDelete = (id) => {
@@ -40,8 +46,8 @@ const ManageProducts = () => {
                         swal("Product has been deleted!", {
                             icon: "success",
                           });
-                          const filter = allProducts.filter(product =>product._id !== id);
-                          setAllProducts(filter)
+                          const filter = allProductsToManage.filter(product =>product._id !== id);
+                          dispatch(setAllProductsToManage(filter));
                     }
                 })             
             } else {
@@ -49,6 +55,38 @@ const ManageProducts = () => {
             }
           });      
     }
+
+
+    const setModalVal = (stockNumber,id) => {
+      setSmShow(true)
+      dispatch(setStock(stockNumber));
+      dispatch(setIdToStock(id));
+    }
+
+
+
+    const { register, handleSubmit} = useForm();
+    const onSubmit = data => {
+      const info={id: idToStock, stock:data?.stock};
+        
+      // updating-stock
+      axios.put(`https://guarded-ocean-40685.herokuapp.com/setStock`,{info})
+      .then((res) => {
+         if(res.data?.modifiedCount){
+          setSmShow(false)
+          swal("stock has been set!", {
+            icon: "success",
+          });
+          dispatch(setPageRender(Math.random()*20));
+         }else{
+          swal("Failed to set!", {
+            icon: "warning",
+          });
+         }
+        
+      })
+    };
+
 
 
     return (
@@ -75,14 +113,40 @@ const ManageProducts = () => {
                   <td className="fw-bold text-secondary">{index + 1}</td>
                   <td className="fw-bold text-secondary">{product?.name}</td>
                   <td className="fw-bold text-secondary">{product?.price}</td>
-                  <td  className="fw-bold text-secondary">{product?.stock}</td>
+                  <td  className="fw-bold text-secondary"><Button variant="info" className="shadow text-dark fw-bold" onClick={() =>setModalVal(product?.stock, product?._id)}>{product?.stock}</Button></td>
                   <td><Button onClick={()=>handleDelete(product._id)} variant="danger"><i className="fas fa-trash-alt pe-2"></i>Delete</Button></td>
                 </tr>
               );
             })}
+
+            
           </tbody>
         </Table>
       </div>
+
+
+      <Modal
+        size="sm"
+        show={smShow}
+        onHide={() => setSmShow(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-sm">
+           <p className="text-secondary fw-bold">Set stock</p>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <form onSubmit={handleSubmit(onSubmit)}>
+           <div className="d-flex gap-2">
+           <input className="border-1 ps-2 bg-light fw-bold" defaultValue={stock} {...register("stock")} />
+            <Button variant="danger" className="border-none" type="submit">set</Button>
+           </div>
+        </form>          
+        </Modal.Body>
+      </Modal>
+
+
         </div>
     );
 };

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Card, Button, Table } from 'react-bootstrap';
 import swal from "sweetalert";
 import { useDispatch, useSelector } from "react-redux";
-import { setSingleUserProducts } from "../../../Redux/slice/statesSlice";
+import { setPaySuccess, setSingleUserProducts } from "../../../Redux/slice/statesSlice";
 import loader from "../../../loader.gif";
 import { Link } from "react-router-dom";
 
@@ -14,6 +14,10 @@ const MyOrders = () => {
   );
   const token = useSelector((state) => state.stateContainer.token);
   const user = useSelector((state) => state.stateContainer.user);
+
+
+
+  dispatch(setPaySuccess(''));
 
   useEffect(() => {
     axios(`https://guarded-ocean-40685.herokuapp.com/singleUserOrders/${user?.email}`).then(

@@ -28,7 +28,9 @@ const bookSlice = createSlice({
         paySuccess :'',
         payError :'',
         payProcessing:false,
-        payClientSecret:''
+        payClientSecret:'',
+        stock:0,
+        idToStock: '',
 
     },
     reducers: {
@@ -101,10 +103,16 @@ const bookSlice = createSlice({
          setPayClientSecret: (state, { payload }) => {
             state.payClientSecret= payload;
          },
+         setStock: (state, { payload }) => {
+            state.stock= payload;
+         },
+         setIdToStock: (state, { payload }) => {
+            state.idToStock= payload;
+         },
     },   
     
 });
 
-export const { addToReadingList, googleSignIn,googleLogOut,updateAuth,updateLoading,setErrorMsg, setAdmin, setContainer, setSingleProduct, setAllProduct, setPage, setPageCount, setIdToken, setReview, setAllOrders, setPageRender,setSingleUserProducts, setAllProductsToManage,setSingleProductToPay, setPaySuccess,setPayError, setPayProcessing,setPayClientSecret } = bookSlice.actions;
+export const { addToReadingList, googleSignIn,googleLogOut,updateAuth,updateLoading,setErrorMsg, setAdmin, setContainer, setSingleProduct, setAllProduct, setPage, setPageCount, setIdToken, setReview, setAllOrders, setPageRender,setSingleUserProducts, setAllProductsToManage,setSingleProductToPay, setPaySuccess,setPayError, setPayProcessing,setPayClientSecret, setStock, setIdToStock } = bookSlice.actions;
 
 export default bookSlice.reducer;

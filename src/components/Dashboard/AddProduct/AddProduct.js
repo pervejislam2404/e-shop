@@ -98,10 +98,10 @@ const AddProduct = () => {
                     style={{ background: "rgb(238 238 238)" }}
                     className=" w-100 p-3 fs-5 border-0 my-3 rounded "
                      {...register("category")}>
-                        <option value="shoe">Shoe</option>
+                        <option value="shoes">Shoe</option>
                         <option value="furniture">Furniture</option>
                         <option value="cloths">Cloths</option>
-                        <option value="beauty">Beauty products</option>
+                        <option value="beautyProduct">Beauty products</option>
                     </select>
             </div>
  

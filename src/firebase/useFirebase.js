@@ -16,13 +16,13 @@ firebaseInitialize();
   const dispatch = useDispatch();
   const user = useSelector((state)=> state.stateContainer.user);
 
+// register-user-with-email-password
 
     const registerWithEmailPass = (email, password, name) => {
       dispatch(updateLoading(true));
       createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             dispatch(setErrorMsg(''));
-            console.log('came sign with email pass');
               const newUser = { email, displayName: name };
               dispatch(googleSignIn(newUser))
               saveUser(email, name, 'POST');
@@ -41,6 +41,7 @@ firebaseInitialize();
           .finally(() =>  dispatch(updateLoading(false)));
   }
 
+// sign-in-with-email-and-password
 
   const signWithEmailPass = (email, password, location, navigate) =>{
     signInWithEmailAndPassword(auth, email, password)
@@ -62,7 +63,7 @@ firebaseInitialize();
 
 
 
-
+// google-sign-in-method
 
 const googleSign = (location,navigate)=>{
     dispatch(updateLoading(true));

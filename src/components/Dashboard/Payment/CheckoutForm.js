@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import success from './success.png';
 import { Spinner, Button } from 'react-bootstrap';
 import { setPayClientSecret, setPayError, setPayProcessing, setPaySuccess } from '../../../Redux/slice/statesSlice';
 
@@ -52,7 +53,6 @@ const CheckoutForm = ({ singleProductToPay }) => {
         }
         else {
             dispatch(setPayError(''));
-            console.log(paymentMethod);
         }
 
         // payment intent
@@ -124,7 +124,10 @@ const CheckoutForm = ({ singleProductToPay }) => {
                 payError && <p className="fw-bold pt-5" style={{ color: 'red' }}>{payError}</p>
             }
             {
-                paySuccess && <p className="fw-bold pt-5" style={{ color: 'green' }}>{paySuccess}</p>
+                paySuccess && <div className="container text-center">
+                    <p className="fw-bold pt-5" style={{ color: 'green' }}>{paySuccess}</p>
+                     <img className="img-fluid" src={success} alt="" />
+                </div>
             }
         </div>
     );
