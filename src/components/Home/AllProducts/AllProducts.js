@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -6,18 +6,23 @@ import {
   setPage,
   setPageCount,
 } from "../../../Redux/slice/statesSlice";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Carousel, InputGroup, FormControl } from 'react-bootstrap';
 import Rating from "react-rating";
 import { useNavigate } from "react-router-dom";
 import loader from './loader.gif';
-import banner from './banner.jpg';
 import './AllProduct.css';
+
+import sliderOne from './slider-one.jpg';
+import sliderTwo from './slider-two.jpg'
+import sliderThree from './slider-three.jpg' 
 
 
 
 
 
 const AllProducts = () => {
+ const [rendarer,serRendarer] = useState(false)
+
   const allProducts = useSelector((state) => state.stateContainer.allProducts);
   const pageCount = useSelector((state) => state.stateContainer.pageCount);
   const page = useSelector((state) => state.stateContainer.page);
@@ -34,10 +39,21 @@ const AllProducts = () => {
         dispatch(setPageCount(pageNumber));
       }
     );
-  }, [page]);
+  }, [page,rendarer]);
 
+ 
 
-
+  const handleSearch = (e)=>{
+    const searchVal = e.target.value;
+    console.log(e);
+    if(e.nativeEvent.data == null){
+      return serRendarer(true)
+    }
+    console.log(searchVal)
+    const filterProduct= allProducts.filter(product => product.name.toLowerCase().includes(searchVal.toLowerCase()));
+    console.log(filterProduct);
+    dispatch(setAllProduct(filterProduct));
+  }
   
   
   const handleDetail = (id) => {    
@@ -48,19 +64,50 @@ const AllProducts = () => {
     <div>
 
 
+ {/* carousel */}
+ <div className="">
+ <Carousel variant="dark">
+  <Carousel.Item>
+    <img
+      className="d-block w-100  slide-img"
+      // height="600"
+      src={sliderOne}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100 slide-img"
+      // height="600"
+      src={sliderTwo}
+      alt="Second slide"
+    />
+    <Carousel.Caption>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100 slide-img"
+      // height="600"
+      src={sliderThree}
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+      
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+ </div>
+{/* carousel */}
 
-      <div className="container-fluid bannerDesign">
-            <img className="img-fluid w-100 h-100" src={banner} alt="" />
-            <div class="childDesign">
-                 <h1 className="fw-bold fs-2 mt-4">GET <span className="animate">50% DISCOUNT</span> ON PRODUCT</h1>
-            </div>
-      </div>
 
 
 
       <div className="container pt-5">
-
-
 
 
 
@@ -75,6 +122,19 @@ const AllProducts = () => {
                 ><div className="px-lg-5 px-md-5 px-3 fs-2 fs-lg-3">{number + 1}</div></button>)
           }
        </div>
+
+       
+<div className="box pb-5 mx-auto">
+<InputGroup className="mb-3">
+    <FormControl
+    onChange={(e)=>handleSearch(e)}
+      placeholder="Product Name"
+      aria-label="Recipient's username"
+      aria-describedby="basic-addon2"
+    />
+    <InputGroup.Text id="basic-addon2">search</InputGroup.Text>
+  </InputGroup>
+</div>
 
 
         <div className="row g-3">
