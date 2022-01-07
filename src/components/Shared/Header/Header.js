@@ -53,7 +53,7 @@ const Header = () => {
               </Nav.Link>
 
              {user?.email &&  <Nav.Link className="text-info fw-bold fs-6">
-               <img height="30" className="rounded-pill mx-2" width="30" src={user.photoURL} alt="" />
+               <img height="30" className="rounded-pill mx-2" width="30" src={user.photoURL || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXIIJp6l4vwYFbPKDQbyAdczq1pTkheW0YXQ&usqp=CAU"} alt="" />
                 {user.email}
               </Nav.Link>}
 

@@ -1,7 +1,7 @@
 import firebaseInitialize from "./firebase.init";
 import { getAuth, signInWithPopup, GoogleAuthProvider,signOut,onAuthStateChanged, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, getIdToken } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
-import {googleSignIn,googleLogOut, updateAuth, updateLoading, setErrorMsg, setAdmin, setIdToken} from '../Redux/slice/statesSlice'
+import {googleSignIn,googleLogOut, updateAuth, updateLoading, setErrorMsg, setAdmin, setIdToken, setGoogleSignInError} from '../Redux/slice/statesSlice'
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -55,7 +55,7 @@ firebaseInitialize();
   })
   .catch((error) => {
     const errorMessage = error.message;
-    dispatch(setErrorMsg(errorMessage));
+    dispatch(setGoogleSignInError(errorMessage));
   });
 
   }
@@ -80,7 +80,7 @@ const googleSign = (location,navigate)=>{
     })
     .catch((error) => {
       const errorMessage = error.message;
-      dispatch(setErrorMsg(errorMessage));
+      dispatch(setGoogleSignInError(errorMessage));
     });
 }
 

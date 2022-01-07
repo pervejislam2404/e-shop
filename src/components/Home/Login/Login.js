@@ -13,7 +13,7 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const error = useSelector((state)=> state.stateContainer.errorMsg)
+  const error = useSelector((state)=> state.stateContainer.googleSignInError)
 
 
   const onSubmit = (data) => {
@@ -58,7 +58,7 @@ const Login = () => {
 
                 <div className="text-center p-3">
                   <h5 className="text-danger">{error}</h5>
-                  <Link className="text-decoration-none fw-bold fs-5 text-danger" to="/register">Don't you have account?<span className="text-primary">Register</span></Link>
+                  <Link className="text-decoration-none fw-bold fs-5 text-secondary" to="/register">Don't you have account?<span className="text-primary">Register</span></Link>
               </div>
           </div>
 

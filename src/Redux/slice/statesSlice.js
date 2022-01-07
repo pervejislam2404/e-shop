@@ -52,6 +52,8 @@ const bookSlice = createSlice({
         stock:0,
       //   getting-id-to-update-stock
         idToStock: '',
+          //  google-sing-error   
+        googleSignInError:'',   
 
     },
     reducers: {
@@ -130,10 +132,13 @@ const bookSlice = createSlice({
          setIdToStock: (state, { payload }) => {
             state.idToStock= payload;
          },
+         setGoogleSignInError: (state, { payload }) => {
+          state.googleSignInError = payload;
+         }
     },   
     
 });
 
-export const { addToReadingList, googleSignIn,googleLogOut,updateAuth,updateLoading,setErrorMsg, setAdmin, setContainer, setSingleProduct, setAllProduct, setPage, setPageCount, setIdToken, setReview, setAllOrders, setPageRender,setSingleUserProducts, setAllProductsToManage,setSingleProductToPay, setPaySuccess,setPayError, setPayProcessing,setPayClientSecret, setStock, setIdToStock } = bookSlice.actions;
+export const { addToReadingList, googleSignIn,googleLogOut,updateAuth,updateLoading,setErrorMsg, setAdmin, setContainer, setSingleProduct, setAllProduct, setPage, setPageCount, setIdToken, setReview, setAllOrders, setPageRender,setSingleUserProducts, setAllProductsToManage,setSingleProductToPay, setPaySuccess,setPayError, setPayProcessing,setPayClientSecret, setStock, setIdToStock,setGoogleSignInError} = bookSlice.actions;
 
 export default bookSlice.reducer;
