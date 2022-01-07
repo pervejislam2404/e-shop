@@ -1,0 +1,5 @@
+.dash-bg {
+    background-image: url(https://elementor.com/marketing/wp-content/uploads/sites/16/2021/02/ecommerce.jpg);
+    background-color: rgba(7, 5, 5, 0.8);
+    background-blend-mode: darken, luminosity;
+}

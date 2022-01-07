@@ -46,9 +46,10 @@ const Login = () => {
                     <input 
                     className="bg-light p-3 w-100 fs-5 border-0 my-3"
                     type="password" {...register("password",{required: true,minLength: 6 })} placeholder="password"/>
-                    <input 
-                    className="bg-danger p-3 w-100 fs-5 border-0 my-3"
-                    type="submit" />
+                    <Button 
+                    variant="info"
+                    className="p-2 w-100 fs-5 text-light border-0 my-3"
+                    type="submit">Login </Button>
                 </form>
            
                 <div className="text-center">

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPaySuccess, setSingleUserProducts } from "../../../Redux/slice/statesSlice";
 import loader from "../../../loader.gif";
 import { Link } from "react-router-dom";
+import InfoChart from '../InfoChart/InfoChart';
 
 const MyOrders = () => {
   const dispatch = useDispatch();
@@ -86,11 +87,13 @@ const MyOrders = () => {
 
   return (
     <div>
+
+      <InfoChart/>
       <div className="container py-3 overflow-scroll">
 
         {!singleUserProducts?.length && (
           <div className="d-flex justify-content-center align-items-center p-5">
-            <h3 className="p-2 bg-danger rounded text-white">Nothing...</h3>
+            <h5 className="p-2 bg-danger rounded text-white">Nothing in your cart, add some product</h5>
           </div>
         )}
 

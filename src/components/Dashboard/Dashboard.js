@@ -3,6 +3,7 @@ import useFirebase from '../../firebase/useFirebase';
 import { Button } from 'react-bootstrap';
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import './Dashboard.css'
 
 
 
@@ -59,7 +60,7 @@ const handleSingOut = () =>{
 
             </ul>
           </div>
-          <div style={{backgroundColor:'#F9F9F9'}} className="col-12 col-lg-9">
+          <div className="col-12 col-lg-9 dash-bg">
                  <Outlet/>
                 
           </div>
