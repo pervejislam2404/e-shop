@@ -91,7 +91,7 @@ const CheckoutForm = ({ singleProductToPay }) => {
                 body: JSON.stringify(payment)
             })
                 .then(res => res.json())
-                .then(data => console.log(data));
+                .then(data =>{});
         }
 
     }

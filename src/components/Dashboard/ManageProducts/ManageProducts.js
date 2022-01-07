@@ -92,7 +92,6 @@ const ManageProducts = () => {
 
     const handleSearch = (e)=>{
       const searchVal = e.target.value;
-      console.log(e);
       if(e.nativeEvent.data == null){
         dispatch(setPageRender(Math.random()*20));
       }

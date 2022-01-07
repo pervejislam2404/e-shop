@@ -45,13 +45,10 @@ const AllProducts = () => {
 
   const handleSearch = (e)=>{
     const searchVal = e.target.value;
-    console.log(e);
     if(e.nativeEvent.data == null){
       return serRendarer(true)
     }
-    console.log(searchVal)
     const filterProduct= allProducts.filter(product => product.name.toLowerCase().includes(searchVal.toLowerCase()));
-    console.log(filterProduct);
     dispatch(setAllProduct(filterProduct));
   }
   
