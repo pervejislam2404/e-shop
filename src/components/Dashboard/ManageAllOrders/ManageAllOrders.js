@@ -102,7 +102,7 @@ const handleStatus = id => {
                  
         <Table bordered hover>
          {allOrders?.length && <thead>
-            <tr className="text-center">
+            <tr className="text-center text-primary">
               <th>Index</th>
               <th>Photo</th>
               <th>Product Name</th>
@@ -121,13 +121,13 @@ const handleStatus = id => {
             {allOrders?.map((product,index) => {
               return (
                 <tr key={index} className="text-center">
-                  <td className="fw-bold text-secondary">{index + 1}</td>
+                  <td className="fw-bold text-light">{index + 1}</td>
                   <td><img src={product?.img} height="50" width="60" alt="img" /></td>
-                  <td className="fw-bold text-secondary">{product?.name}</td>
-                  <td className="fw-bold text-secondary">{product?.email}</td>
-                  <td className="fw-bold text-secondary">{product?.number}</td>
-                  <td className="fw-bold text-secondary">{product?.address}</td>
-                  <td className="fw-bold text-secondary">{product?.price}</td>
+                  <td className="fw-bold text-light">{product?.name}</td>
+                  <td className="fw-bold text-light">{product?.email}</td>
+                  <td className="fw-bold text-light">{product?.number}</td>
+                  <td className="fw-bold text-light">{product?.address}</td>
+                  <td className="fw-bold text-light">{product?.price}</td>
                   <td>
                     <Button 
                       onClick={()=>handleDelete(product._id)} 

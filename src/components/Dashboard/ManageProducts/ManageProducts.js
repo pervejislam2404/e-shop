@@ -122,7 +122,7 @@ const ManageProducts = () => {
                 </div>}
         <Table striped bordered hover>
           <thead>
-            <tr className="text-center">
+            <tr className="text-center text-primary">
               <th>Index</th>
               <th>Product Name</th>
               <th>Price</th>
@@ -135,10 +135,10 @@ const ManageProducts = () => {
             {allProductsToManage.map((product,index) => {
               return (
                 <tr key={index} className="text-center">
-                  <td className="fw-bold text-secondary">{index + 1}</td>
-                  <td className="fw-bold text-secondary">{product?.name}</td>
-                  <td className="fw-bold text-secondary">{product?.price}</td>
-                  <td  className="fw-bold text-secondary"><Button variant="info" className="shadow text-dark fw-bold" onClick={() =>setModalVal(product?.stock, product?._id)}>{product?.stock}</Button></td>
+                  <td className="fw-bold text-light">{index + 1}</td>
+                  <td className="fw-bold text-light">{product?.name}</td>
+                  <td className="fw-bold text-light">{product?.price}</td>
+                  <td  className="fw-bold text-light"><Button variant="info" className="shadow text-dark fw-bold" onClick={() =>setModalVal(product?.stock, product?._id)}>{product?.stock}</Button></td>
                   <td><Button onClick={()=>handleDelete(product._id)} variant="danger"><i className="fas fa-trash-alt pe-2"></i>Delete</Button></td>
                 </tr>
               );

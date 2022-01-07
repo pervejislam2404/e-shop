@@ -102,7 +102,7 @@ const MyOrders = () => {
         <Table >
           {singleUserProducts?.length && (
             <thead>
-              <tr className="text-center">
+              <tr className="text-center text-primary">
                 <th>Index</th>
                 <th>Photo</th>
                 <th>Product Name</th>
@@ -126,18 +126,18 @@ const MyOrders = () => {
                     <img src={product?.img} height="50" width="60" alt="img" />
                   </td>
 
-                  <td className="fw-bold text-secondary">{product?.name}</td>
+                  <td className="fw-bold text-light">{product?.name}</td>
 
                   <td className="text-dark pt-4">
                     <span className="bg-info px-4 py-2 text-black rounded fw-bold">{product?.status}</span>
                   </td>
 
-                  <td className="fw-bold text-secondary">{product?.address}</td>
+                  <td className="fw-bold text-light">{product?.address}</td>
 
-                  <td className="fw-bold text-secondary">{product?.price}</td>
+                  <td className="fw-bold text-light">{product?.price}</td>
 
                   <td className="text-dark fw-bold text-dark pt-4 ">
-                    {product?.payment ? <p className="">paid</p>: 
+                    {product?.payment ? <p className="text-light">paid</p>: 
                      <Link to={`/dashboard/payment/${product?._id}`} className="text-dark text-decoration-none bg-info px-4 rounded py-2">Pay</Link>}
                   </td>
 
