@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
-import { Spinner, Table, Button, Modal } from 'react-bootstrap';
+import { Spinner, Table, Button, Modal, InputGroup, FormControl } from 'react-bootstrap';
 import  swal from 'sweetalert';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -88,10 +88,36 @@ const ManageProducts = () => {
     };
 
 
+    // search-function
+
+    const handleSearch = (e)=>{
+      const searchVal = e.target.value;
+      console.log(e);
+      if(e.nativeEvent.data == null){
+        dispatch(setPageRender(Math.random()*20));
+      }
+      const filterProduct= allProductsToManage.filter(product => product.name.toLowerCase().includes(searchVal.toLowerCase()));
+      dispatch(setAllProductsToManage(filterProduct));
+    }
 
     return (
         <div>
+             
+              <div className="box pt-3  w-75 mx-auto">
+                      <InputGroup className="mb-3">
+                          <FormControl
+                          onChange={(e)=>handleSearch(e)}
+                          placeholder="Product Name"
+                          aria-label="Recipient's username"
+                          aria-describedby="basic-addon2"
+                          />
+                          <InputGroup.Text id="basic-addon2 bg-primary">search</InputGroup.Text>
+                      </InputGroup>
+                  </div>
+          
+
             <div className="container py-3">
+
       {!allProductsToManage && <div className="text-center p-5">
                     <Spinner animation="grow" variant="info" />
                 </div>}

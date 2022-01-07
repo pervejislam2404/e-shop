@@ -7,7 +7,7 @@ import loader from '../../../../loader.gif'
 
 const Cloths = () => {
     const dispatch = useDispatch()
-    const Container = useSelector((state)=> state.stateContainer.Container)
+    const Container = useSelector((state)=> state.stateContainer.Container);
     
     // getting-all-cloths-product
     useEffect(() => {
